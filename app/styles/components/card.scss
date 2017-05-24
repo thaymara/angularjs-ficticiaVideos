@@ -1,0 +1,52 @@
+.card{
+    border: 2px solid $grey;
+    box-shadow: 0 3px 3px $grey;
+
+    &.destaque{
+       // width: 600px; 
+        height: auto;
+        padding: 10px 30px;
+        margin-bottom: 5px;
+
+        .header-destaque{
+            position: relative;
+            h3{
+                width: 80%;
+            }
+            .icons{
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+        p{
+                word-wrap: break-word;
+            }
+    }
+    .destaque-title{
+        color: $pink-title;
+    }
+
+    &.more-videos{
+        padding: 10px 15px;
+        height: 520px;
+    }
+
+    .videos{
+        height: 450px;
+        overflow: scroll;
+        
+        p{ 
+            color: $light-white;
+        }
+    }
+}
+
+.modal-card{
+    border: none;
+    box-shadow: 0 0 0 transparent;
+
+    &.destaque{
+        padding: 0 !important;
+    }
+}

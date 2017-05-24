@@ -1,0 +1,37 @@
+<h1 class="title">Resultados para: "{{ research }}"</h1>
+<div class="error" ng-if="listEmpty">
+    <h4>Não foi encontrado nenhum resultado para a sua busca.</h4>
+</div>
+<div class="error" ng-if="!showVideos">
+    <h4>{{message}}</h4>
+</div>
+<div class="row-no-padding" ng-if="!listEmpty">
+    <div class="videos">
+        <div class="video-list media col-lg-4 col-md-4 col-sm-4 col-xs-12" 
+            ng-repeat="result in resultList track by $index"
+            ng-if="result.id"
+            ng-click="openModalVideo(result)">
+            <div class="media-left">
+                <img class="media-object video-thumbnail" ng-src="{{ result.snippet.thumbnails.medium.url }}">
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading video-title">
+                    {{ result.snippet.title | limitTo:50 }}{{ result.snippet.title.length > 50 ? '…' : '' }}
+                </h4>
+                <p><i class="fa fa-eye video-icon" aria-hidden="true"></i> {{ result.statistics.viewCount | number }} views</p>
+            </div>
+        </div>
+    </div>
+    <div class="button-section">
+        <div class="loading" ng-if="loading && nextPage">
+            <i class="fa fa-spinner" aria-hidden="true"></i>
+        </div>
+        <button 
+            ng-if="!loading && nextPage && !listEmpty"
+            ng-click="loadMoreVideos()"
+            type="button" 
+            class="btn btn-default load-more">
+            Carregar Mais vídeos...
+        </button>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.navbar-default{
+    background: $pink;
+    border-color: transparent;
+    border-width: 0;
+}
+
+.navbar-default .navbar-text, .navbar-default .navbar-brand{
+    color: $white;
+
+    &:hover, &:visited, &:active{
+        color: $white;
+    }
+}
+
+.navbar-toggle.collapsed{
+    border: none;
+    color: $white;
+
+    &:hover, &:active, &:visited{
+        background: transparent;
+    }
+}
+
+.navbar-default .navbar-nav > li > a{
+    color: $white;
+
+    &:hover, &:active, &:visited{
+        color: $white !important;
+    }
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+    border: 0 none transparent;
+    .navbar-form{
+        box-shadow: none;
+    }
+}

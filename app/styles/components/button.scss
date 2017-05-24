@@ -1,0 +1,53 @@
+.button-section{
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 20px 0;
+    clear: both;
+}
+
+.btn-menu{
+    color: $white;
+    background-color: transparent;
+    border-color: transparent; 
+    padding: 0;
+
+    &:hover{
+        color: $white;
+    }
+
+    &:active{
+        background-color: transparent;
+    }
+}
+
+.btn-search{
+    @extend .btn-menu;
+    position: absolute;
+    right: 18.2%;
+    top: 15px;
+
+    &:hover{
+       opacity: 0.5;
+    }
+}
+
+.load-more{
+    background-color: $white;
+    color: $dark-grey;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 10px 0;
+    width: 100%;
+
+    &:hover, &:active{
+        background-color: #797979 !important;
+        color: $white !important;
+    }
+}
+
+@media screen and(max-width: 768px){
+    .button-section{
+        width: auto;
+    }
+}

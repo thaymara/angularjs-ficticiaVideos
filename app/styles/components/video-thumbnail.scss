@@ -1,0 +1,22 @@
+.video-thumbnail{
+    width: 200px;
+    height: auto;
+}
+
+.video-title{
+    color: $pink-title;
+}
+
+.video-list{
+    min-height: 150px;
+}
+
+@media screen and(max-width: 768px){
+    .video-thumbnail{
+        width: 100px;
+    }
+
+    .videos, .video-list{
+        min-height: 80px;
+    }
+}

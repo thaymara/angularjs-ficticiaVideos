@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ficticiaApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#A7395C">
+    <!-- The above 3 meta tags *must* come first in the head; any other head 
+         content must come *after* these tags -->
+    
+    <title>Ficticia Vídeos</title>    
+    
+    <!-- build:css styles/main.css -->
+    <link href="../bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <!-- others css -->
+    <link href="styles/app.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div ui-view="header"></div>
+    <div class="container">
+        <div ui-view="content"></div>
+    </div>
+    
+    <!-- build:js js/main.js -->
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="common/constants.util.js"></script>
+    <script src="header/header.controller.js"></script>
+    <script src="destaque/destaque.controller.js"></script>
+    <script src="videos/videos.controller.js"></script>
+    <script src="search/search.controller.js"></script>
+    <script src="common/modal/videoModal.controller.js"></script>
+    <script src="common/videos.service.js"></script>
+    <!-- endbuild -->
+    <script src="locale/angular-locale_pt-br.js"></script>
+
+</body>
+
+</html>

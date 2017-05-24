@@ -1,0 +1,23 @@
+.search{
+    //display: none;
+    input[type="text"] {
+        background-color: $dark-pink;
+        width: 250px;
+        color: $white;
+        border: 1px solid $white;
+    }
+}
+
+#search{
+ display: none;   
+}
+
+.search-mobile{
+    width: auto;
+    margin: 0 auto;
+    input[type="search"] {
+        background-color: $dark-pink;
+        color: $white;
+        border: 1px solid $dark-pink;
+    }
+}

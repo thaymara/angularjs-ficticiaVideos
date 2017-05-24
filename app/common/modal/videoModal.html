@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <button 
+        type="button" 
+        class="close" 
+        aria-label="Close"
+        ng-click="closeModal()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body" id="modal-body" ng-keypress="closeModalEsc()">
+    <iframe 
+        class="video-iframe"
+        ng-src="{{trustedUrl(video.id)}}" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+
+    <div class="card destaque modal-card">
+        <div class="header-destaque">
+            <h3 class="destaque-title">{{ video.snippet.title }}</h3>
+            <div class="icons">
+            <i class="fa fa-eye destaque-icon" 
+                aria-hidden="true"
+                popover-trigger="'mouseenter'"
+                popover-placement="top"
+                uib-popover="{{ video.statistics.viewCount | number }} views"></i> 
+            
+            <i class="fa fa-clock-o destaque-icon"
+                aria-hidden="true"
+                popover-trigger="'mouseenter'"
+                popover-placement="top"
+                uib-popover="{{ video.snippet.publishedAt | date: 'd MMMM yyyy' }}"></i>
+            </div>
+        </div>
+        <p class="destaque-description">{{ video.snippet.description }}</p>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.popover{
+    border: 2px solid $grey;
+    font-weight: 500;
+    color: $dark-grey;
+}
+
+.popover-content{
+    min-width: 150px;
+    width: auto;
+    font-family: 'LiberationSans', "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    color: $dark-grey;
+    font-weight: 700;
+    text-align: center;
+}

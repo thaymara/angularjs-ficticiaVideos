@@ -1,0 +1,26 @@
+{
+  "name": "ficticiaVideos",
+  "authors": [
+    "Thaysa Mara  Monteiro dos Santos <thaysamarasantos@gmail.com>"
+  ],
+  "description": "desafio front end",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "font-awesome": "^4.7.0",
+    "bootstrap": "^3.3.7",
+    "angular-ui-router": "^0.4.2"
+  },
+  "devDependencies": {
+    "angular-bootstrap": "^2.5.0",
+    "angular-animate": "^1.6.4",
+    "angular-sanitize": "^1.6.4"
+  }
+}

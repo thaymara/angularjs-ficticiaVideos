@@ -1,0 +1,12 @@
+.media{
+    cursor: pointer;
+    opacity: 0.5;
+
+    &:hover, &:active{
+        opacity: 1;
+    }
+
+    &:first-child{
+        margin-top: 15px;
+    }
+}

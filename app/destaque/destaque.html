@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+        <h1 class="title">Vídeo em Destaque</h1>
+        <div class="error" ng-if="!showDestaqueVideo">
+            <h4>{{message}}</h4>
+        </div>
+        <div ng-if="showDestaqueVideo">
+            <iframe 
+                class="video-iframe"
+                ng-src="{{trustedUrl(destaqueVideo.id)}}" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        
+            <div class="card destaque">
+                <div class="header-destaque">
+                    <h3 class="destaque-title">{{ destaqueVideo.snippet.title }}</h3>
+                    <div class="icons">
+                    <i class="fa fa-eye destaque-icon" 
+                        aria-hidden="true"
+                        popover-trigger="'mouseenter'"
+                        popover-placement="top"
+                        uib-popover="{{ destaqueVideo.statistics.viewCount | number }} views"></i> 
+                    
+                    <i class="fa fa-clock-o destaque-icon"
+                        aria-hidden="true"
+                        popover-trigger="'mouseenter'"
+                        popover-placement="top"
+                        uib-popover="{{ destaqueVideo.snippet.publishedAt | date: 'd MMMM yyyy' }}"></i>
+                    </div>
+                </div>
+                <p class="destaque-description" ng-click="openFullDescription()">
+                    <span ng-if="!fullDescription"> {{destaqueVideo.snippet.description | limitTo:300 }} {{ destaqueVideo.snippet.description.length > 300 ? '…' : '' }}</span>
+                    <span ng-if="fullDescription">{{destaqueVideo.snippet.description}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+        <h1 class="title">+ Vídeos</h1>
+        <div class="error" ng-if="!showVideos">
+            <h4>{{message}}</h4>
+        </div>
+        <div class="card more-videos" ng-if="showVideos">
+            <div class="videos">
+                <div class="media" 
+                    ng-repeat="video in videos track by $index"
+                    ng-if="video.id"
+                    ng-click="openVideo(video)">
+                    <div class="media-left">
+                        <img class="media-object video-thumbnail" ng-src="{{ video.snippet.thumbnails.medium.url }}">
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading video-title">
+                            {{ video.snippet.title | limitTo:50 }}{{ video.snippet.title.length > 50 ? '…' : '' }}
+                        </h4>
+                        <p><i class="fa fa-eye video-icon" aria-hidden="true"></i> {{ video.statistics.viewCount | number }} views</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading" ng-if="loading">
+                <i class="fa fa-spinner" aria-hidden="true"></i>
+            </div>
+            <button
+                ng-if="!loading && nextPage && !listEmpty"
+                ng-click="loadMoreVideos()"
+                type="button" 
+                class="btn btn-default btn-block load-more">
+                Carregar Mais vídeos...
+            </button>
+        </div>
+    </div>
+</div>

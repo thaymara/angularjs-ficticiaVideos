@@ -1,0 +1,15 @@
+//Modal overwrite
+
+.modal-content{
+    border-radius: 0;
+    @extend .card;
+}
+
+.modal-header{
+    border-bottom: none;
+    padding: 10px;
+}
+
+.modal-body{
+    padding: 15px 20px;
+}
